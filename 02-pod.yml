@@ -39,3 +39,14 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: termination-demo
+spec:
+  containers:
+  - name: termination-demo-container
+    image: debian
+    command: ["/bin/sh"]
+    args: ["-c", "sleep 10 && echo Sleep expired > /dev/termination-log"]
