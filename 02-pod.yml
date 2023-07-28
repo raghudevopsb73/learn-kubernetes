@@ -9,3 +9,18 @@ spec:
 
     - name: mongo
       image: mongo
+---
+## Annotations & Labels
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod03
+  annotations:
+    training/class: devops
+  labels:
+    type: test
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
