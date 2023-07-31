@@ -12,9 +12,9 @@ spec:
 
  ---
 apiVersion: v1
-kind: Service
+kind: Pod
 metadata:
-  name: my-service-nginx
+  name: my-pod-nginx
   labels:
    app.kubernetes.io/name: MyApp
 spec:
