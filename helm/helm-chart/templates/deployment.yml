@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.component_name }}
+  labels:
+    app: guestbook
+    tier: {{ .Values.component_name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: {{ .Values.component_name }}
+      type: rs
+  template:
+    metadata:
+      labels:
+        tier: {{ .Values.component_name }}
+        type: rs
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14
+
